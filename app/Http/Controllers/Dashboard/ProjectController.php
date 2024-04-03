@@ -63,7 +63,10 @@ class ProjectController extends Controller
 
         $newProject = new Project();
         $newProject->fill($formData);
-        $newProject->thumb = $imageName;
+        if(!empty($imageName)){
+
+            $newProject->thumb = $imageName;
+        }
 
 
         $newProject->save();
